@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Verónica Humanes Betancur</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        header {
+            background: #FFD8B2;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #555;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .section {
+            background: #FFD8B2;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-full {
+            grid-column: 1 / -1;
+        }
+
+        .section h2 {
+            color: #764ba2;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .experience-item,
+        .education-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(118, 75, 162, 0.05);
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .experience-item h3,
+        .education-item h3 {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin-bottom: 5px;
+        }
+
+        .company,
+        .institution {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        .duration {
+            color: #888;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            margin-left: 30px;
+            margin-top: 10px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        .languages {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .language-item {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 15px 25px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .language-item:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: translateX(5px);
+        }
+
+        .skills-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            border-radius: 8px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .skill-item h3 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .skill-item p {
+            font-size: 0.95em;
+            opacity: 0.95;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .contact-section h2 {
+            color: white;
+            border-bottom: 3px solid #FFD8B2;
+        }
+
+        .contact-info {
+            margin: 30px 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 216, 178, 0.2);
+            padding: 25px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 216, 178, 0.3);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 216, 178, 0.3);
+        }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            color: #FFD8B2;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            color: #FFD8B2;
+        }
+
+        .contact-details a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            border-bottom: 2px solid #FFD8B2;
+        }
+
+        .contact-message {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 1.05em;
+            font-style: italic;
+            opacity: 0.95;
+        }
+
+        footer {
+            background: #FFD8B2;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+
+        footer p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .subtitle {
+                font-size: 1em;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-details a {
+                font-size: 0.95em;
+                word-break: break-all;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Verónica Humanes Betancur</h1>
+        <p class="subtitle">Desarrolladora de Software | Diseñadora de Videojuegos</p>
+    </header>
+
+    <main class="container">
+        <!-- Sobre Mí -->
+        <section class="section section-full">
+            <h2>Sobre Mí</h2>
+            <p>
+                Soy Verónica Humanes, una profesional apasionada por el desarrollo de software y la creación de videojuegos. 
+                Me caracterizo por mi interés en la lectura, la escritura y el dibujo, habilidades que complementan mi capacidad 
+                para resolver casos técnicos de alta complejidad lógica. Disfruto del entretenimiento digital y mantengo 
+                una atención constante a mi presentación personal.
+            </p>
+            <p>
+                Mi visión profesional se enfoca en el desarrollo de videojuegos y la creación de mi propia empresa en este sector. 
+                Aspiro a consolidar un patrimonio inmobiliario propio y realizar viajes alrededor del mundo, siempre con el 
+                compromiso de contribuir al bienestar de las comunidades necesitadas mediante acciones de ayuda social.
+            </p>
+        </section>
+
+        <!-- Experiencia Laboral -->
+        <section class="section section-full">
+            <h2>Experiencia Laboral</h2>
+            <div class="experience-item">
+                <h3>Asistente de Ventas</h3>
+                <p class="company">Sexology Sex Shop</p>
+                <p class="duration">2 años de experiencia</p>
+                <ul>
+                    <li>Organización y mantenimiento del inventario del local</li>
+                    <li>Atención personalizada al cliente</li>
+                    <li>Gestión de ventas y asesoramiento de productos</li>
+                    <li>Mantenimiento de estándares de limpieza y presentación del establecimiento</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Educación -->
+        <section class="section">
+            <h2>Educación</h2>
+            <div class="education-item">
+                <h3>Técnico en Programación de Software</h3>
+                <p class="institution">Formación Técnica Profesional</p>
+            </div>
+            <div class="education-item">
+                <h3>Bachiller</h3>
+                <p class="institution">Educación Secundaria</p>
+            </div>
+        </section>
+
+        <!-- Idiomas -->
+        <section class="section">
+            <h2>Idiomas</h2>
+            <div class="languages">
+                <div class="language-item">
+                    <strong>Español:</strong> Nativo
+                </div>
+                <div class="language-item">
+                    <strong>Inglés:</strong> A2 (Nivel Básico)
+                </div>
+            </div>
+        </section>
+
+        <!-- Habilidades -->
+        <section class="section section-full">
+            <h2>Habilidades</h2>
+            <div class="skills-list">
+                <div class="skill-item">
+                    <h3>🎨 Diseño Digital</h3>
+                    <p>Creación de sprites y elementos visuales para videojuegos</p>
+                </div>
+                <div class="skill-item">
+                    <h3>🖌️ Coloreado Digital</h3>
+                    <p>Técnicas avanzadas de colorización para arte digital</p>
+                </div>
+                <div class="skill-item">
+                    <h3>🧠 Análisis Lógico</h3>
+                    <p>Capacidad para analizar y resolver problemas técnicos complejos</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contáctanos -->
+        <section class="section section-full contact-section">
+            <h2>Contáctanos</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/>
+                        <path d="m2 7 10 7 10-7"/>
+                    </svg>
+                    <div class="contact-details">
+                        <h3>Correo Electrónico</h3>
+                        <a href="mailto:veritohumanes1550@gmail.com">veritohumanes1550@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <p class="contact-message">¿Interesado en colaborar o conocer más sobre mi trabajo? No dudes en contactarme.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Verónica Humanes Betancur. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
